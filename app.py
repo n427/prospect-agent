@@ -51,6 +51,15 @@ st.markdown("""
     .badge-direct   { background:#ede9fe; color:#5b21b6; }
     .badge-curiosity{ background:#ecfdf5; color:#065f46; }
     .badge-pain     { background:#fff7ed; color:#92400e; }
+    div.stFormSubmitButton > button[kind="primaryFormSubmit"] {
+        background-color: #2563eb;
+        border-color: #2563eb;
+        color: #ffffff;
+    }
+    div.stFormSubmitButton > button[kind="primaryFormSubmit"]:hover {
+        background-color: #1d4ed8;
+        border-color: #1d4ed8;
+    }
 </style>
 """, unsafe_allow_html=True)
 
