@@ -15,7 +15,7 @@ def research_company_website(url: str) -> str:
     result = summarize_prospect(url)
     return json.dumps(result)
 
-search_tool = TavilySearchResults(max_results=3, days=90)
+search_tool = TavilySearchResults(max_results=3)
 tools = [search_tool, research_company_website]
 
 llm = ChatAnthropic(model="claude-opus-4-5", temperature=0)
