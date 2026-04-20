@@ -4,10 +4,15 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.tools import tool
 from dotenv import load_dotenv
-from summarizer import summarize_prospect 
+from summarizer import summarize_prospect
+import streamlit as st
+import os, json
 
-import json
 load_dotenv()
+if hasattr(st, "secrets"):
+    for key in ["ANTHROPIC_API_KEY", "TAVILY_API_KEY"]:
+        if key in st.secrets:
+            os.environ[key] = st.secrets[key]
 
 @tool
 def research_company_website(url: str) -> str:
