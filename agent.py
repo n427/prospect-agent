@@ -25,9 +25,9 @@ tools = [search_tool, research_company_website]
 
 llm = ChatAnthropic(model="claude-opus-4-5", temperature=0)
 prompt = ChatPromptTemplate.from_messages([
-    ("system", """You are a B2B sales researcher for GR0, a digital marketing agency.
+    ("system", """You are a B2B sales researcher for Dyrt, a waste analytics company that helps large venues and commercial facilities reduce waste costs, improve recycling rates, and meet sustainability mandates.
     Given a company name and website, use your tools to research them thoroughly.
-    Find: what they do, their size, recent news, and why they might need digital marketing.
+    Find: what they do, their size, recent news, and why they might need better waste analytics or sustainability reporting.
     Be concise and factual. Only use sources from 2026 and 2025."""),
     ("human", "{input}"),
     ("placeholder", "{agent_scratchpad}"),
@@ -38,7 +38,7 @@ executor = AgentExecutor(agent=agent, tools=tools, verbose=True, return_intermed
 
 if __name__ == '__main__':
     result = executor.invoke({
-    "input": "Research this company: Notion (https://notion.so). What do they do and why might they need better SEO?"
+    "input": "Research this company: Intuit Dome (https://intuitdome.com). What do they do and why might they benefit from waste analytics?"
     })
     print("\n--- FINAL ANSWER ---")
     print(result["output"])

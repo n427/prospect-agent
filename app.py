@@ -3,8 +3,8 @@ import pandas as pd, time
 from email_generator import generate_emails
 
 st.set_page_config(
-    page_title="GR0 Prospect Outreach",
-    page_icon="📬",
+    page_title="Dyrt Prospect Outreach",
+    page_icon="♻️",
     layout="centered",
 )
 
@@ -63,15 +63,15 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("## 📬 GR0 Prospect Outreach Agent")
+st.markdown("## ♻️ Dyrt Prospect Outreach Agent")
 
 st.divider()
 
 with st.form("prospect_form"):
     col_a, col_b = st.columns(2)
     with col_a:
-        company = st.text_input("Company name", "Glossier")
-        website = st.text_input("Website", "https://glossier.com")
+        company = st.text_input("Company name", "Intuit Dome")
+        website = st.text_input("Website", "https://intuitdome.com")
     with col_b:
         contact = st.text_input("Contact name (optional)", "")
         sender  = st.text_input("Your name (signs the email)", "")
